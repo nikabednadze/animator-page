@@ -1,115 +1,190 @@
+/* ფონტები: body-ისთვის ლოკალური ფონტი და სათაურებისთვის Google Font */
+@font-face {
+  font-family: "Local Georgian";
+  src: local("Noto Sans Georgian"), local("Arial");
+  font-display: swap;
+}
+
+/* ფერთა საერთო ცვლადები */
+:root {
+  color-scheme: dark;
+  --background: #0b0d17;
+  --surface: #121528;
+  --border: #2b3150;
+  --text: #eef0ff;
+  --muted: #a9afca;
+  --purple: #a394ff;
+  --cyan: #54d4e8;
+  --yellow: #f3c64d;
+  --green: #63d5a0;
+}
+
+/* გვერდის ძირითადი სტილები */
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  background: #101222;
-  color: #f1f1ff;
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
+  background: var(--background);
+  color: var(--text);
+  font-family: "Local Georgian", "Noto Sans Georgian", Arial, sans-serif;
+  line-height: 1.7;
 }
 
-.header {
-  padding: 48px 20px;
-  background: linear-gradient(120deg, #30236b, #14647a);
-  text-align: center;
-}
-
-.header h1 {
-  margin: 0;
-  font-size: 40px;
-}
-
-.navigation {
+/* ზედა სათაური და ნავიგაცია */
+.site-header {
+  width: min(100% - 32px, 920px);
+  margin: 0 auto;
+  padding: 22px 0;
   display: flex;
-  justify-content: center;
-  gap: 24px;
-  padding: 16px;
-  background: #1b1e35;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
 }
 
-.navigation a {
-  color: #7bdff2;
+.brand {
+  color: var(--text);
+  font-weight: 700;
   text-decoration: none;
-  font-weight: bold;
 }
 
-.navigation a:hover {
-  color: white;
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
 }
 
-.container {
-  width: min(900px, 90%);
-  margin: 30px auto;
+nav a {
+  color: var(--muted);
+  text-decoration: none;
 }
 
-.card,
-.tip {
-  margin-bottom: 20px;
-  padding: 24px;
-  border: 1px solid #343955;
-  border-radius: 16px;
-  background: #1b1e35;
-  box-shadow: 0 8px 24px #0003;
+nav a:hover,
+nav a:focus-visible {
+  color: var(--cyan);
+}
+
+/* მთავარი კონტენტის სიგანე და განლაგება */
+.page {
+  width: min(100% - 32px, 820px);
+  margin: 24px auto 64px;
+}
+
+/* მთავარი სათაურის ბლოკი */
+.hero {
+  margin-bottom: 24px;
+  padding: clamp(24px, 5vw, 42px);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: radial-gradient(ellipse at top right, #252d4a, var(--surface) 65%);
+}
+
+.eyebrow,
+.mission {
+  color: var(--purple);
+  font-weight: 700;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+}
+
+h1 {
+  margin: 0;
+  font-family: "Noto Sans Georgian", "Local Georgian", sans-serif;
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.25;
+  background: linear-gradient(90deg, #a394ff, #54d4e8);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.intro {
+  max-width: 62ch;
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+/* მისიის ბარათები */
+.card {
+  margin-top: 20px;
+  padding: clamp(20px, 4vw, 30px);
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--accent);
+  border-radius: 20px;
+  background: var(--surface);
+}
+
+.card-purple { --accent: var(--purple); }
+.card-cyan { --accent: var(--cyan); }
+.card-yellow { --accent: var(--yellow); }
+.card-green { --accent: var(--green); }
+
+.mission {
+  display: inline-block;
+  margin: 0 0 8px;
+  padding: 3px 12px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+  color: var(--accent);
 }
 
 h2 {
-  margin-top: 0;
-  color: #9c8cff;
+  margin: 0 0 12px;
+  font-size: 1.5rem;
+  line-height: 1.4;
 }
 
-.illustration {
-  display: block;
-  width: 100%;
-  max-height: 350px;
-  object-fit: cover;
-  border-radius: 12px;
+ol {
+  margin: 0;
+  padding-left: 1.5rem;
 }
 
-.caption {
-  color: #b6b8ce;
-  font-size: 14px;
+li + li {
+  margin-top: 8px;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  text-align: left;
+code {
+  padding: 2px 7px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: #1b2038;
+  color: var(--purple);
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
 }
 
-th,
-td {
-  padding: 12px;
-  border-bottom: 1px solid #343955;
+blockquote {
+  margin: 16px 0 0;
+  padding: 16px 20px;
+  border: 1px dashed var(--cyan);
+  border-radius: 14px;
+  background: #18243a;
 }
 
-th {
-  color: #7bdff2;
-}
-
-.tip {
-  border-left: 5px solid #ffc857;
-}
-
-.footer {
-  padding: 20px;
-  color: #b6b8ce;
+/* ქვედა ნაწილი */
+.site-footer {
+  padding: 20px 16px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
   text-align: center;
 }
 
+/* მცირე ეკრანებისთვის */
 @media (max-width: 600px) {
-  .header h1 {
-    font-size: 30px;
+  .site-header {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
-  .navigation {
-    gap: 14px;
-    flex-wrap: wrap;
-  }
-
-  .card,
-  .tip {
-    padding: 18px;
+  .page {
+    margin-top: 12px;
   }
 }
