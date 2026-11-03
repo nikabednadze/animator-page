@@ -1,81 +1,88 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ka">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ანიმატორის სამყარო</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>">
+  <meta name="description" content="ფონტებისა და სუფთა CSS-ის სასწავლო გვერდი">
+  <title>ფონტები და სუფთა CSS</title>
+
+  <!-- Google Fonts: Noto Sans Georgian სათაურებისთვის -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="header">
-    <h1>ანიმატორის სამყარო</h1>
-    <p>იდეები, რომლებიც ნახატებს აცოცხლებს.</p>
+  <!-- გვერდის ზედა ნაწილი და ნავიგაცია -->
+  <header class="site-header">
+    <a class="brand" href="#top">CSS ლაბორატორია</a>
+    <nav aria-label="მთავარი ნავიგაცია">
+      <a href="#fonts">ფონტები</a>
+      <a href="#comments">კომენტარები</a>
+      <a href="#review">AI მიმოხილვა</a>
+    </nav>
   </header>
 
-  <nav class="navigation" aria-label="მთავარი მენიუ">
-    <a href="#about">პროფესია</a>
-    <a href="#skills">უნარები</a>
-    <a href="#tools">ხელსაწყოები</a>
-  </nav>
-
-  <main class="container">
-    <section id="about" class="card">
-      <h2>ვინ არის ანიმატორი?</h2>
-      <p>
-        ანიმატორი ქმნის მოძრავ გამოსახულებებს და პერსონაჟებს.
-        მისი ნამუშევრები გვხვდება ფილმებში, თამაშებსა და რეკლამებში.
+  <main id="top" class="page">
+    <!-- მთავარი სათაური -->
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow">AI-Native Front-End Development · ლექცია 6</p>
+      <h1 id="page-title">ფონტები და სუფთა CSS</h1>
+      <p class="intro">
+        ისწავლე ვებგვერდზე ფონტების გამოყენება, CSS-ის დალაგება
+        და კოდის გაუმჯობესება.
       </p>
-
-      <img
-        class="illustration"
-        src="animator.jpg"
-        alt="ანიმატორის სამუშაო ადგილი"
-      >
-      <p class="caption">აქ დაამატე შენი სურათი სახელით <strong>animator.jpg</strong>.</p>
     </section>
 
-    <section id="skills" class="card">
-      <h2>საჭირო უნარები</h2>
-      <ul>
-        <li>კრეატიული აზროვნება</li>
-        <li>ხატვა და პერსონაჟების შექმნა</li>
-        <li>მოთმინება და ყურადღება დეტალებისადმი</li>
-      </ul>
+    <!-- მისია 1: ფონტების დაყენება -->
+    <section id="fonts" class="card card-purple" aria-labelledby="fonts-title">
+      <p class="mission">მისია 1</p>
+      <h2 id="fonts-title">ფონტები</h2>
+      <ol>
+        <li><code>body</code>-სთვის გამოიყენე ლოკალური ფონტი, რომელიც <code>@font-face</code>-ითაა გამოცხადებული.</li>
+        <li><code>h1</code>-სთვის გამოიყენე Google Fonts-ის სქელი ფონტი.</li>
+        <li>შეამოწმე, რომ ქართულ ასოებს სწორი ფონტი აჩვენებს და მითითებულია fallback.</li>
+      </ol>
     </section>
 
-    <article id="tools" class="card">
-      <h2>ანიმატორის ხელსაწყოები</h2>
-      <p>ანიმატორები სხვადასხვა პროგრამით ქმნიან და ამუშავებენ ანიმაციებს.</p>
+    <!-- მისია 2: კომენტარები HTML-სა და CSS-ში -->
+    <section id="comments" class="card card-cyan" aria-labelledby="comments-title">
+      <p class="mission">მისია 2</p>
+      <h2 id="comments-title">კომენტარები</h2>
+      <ol>
+        <li>HTML-ში კომენტარით აღწერე გვერდის ძირითადი სექციები.</li>
+        <li>CSS-ში კომენტარით მონიშნე სტილების ჯგუფები — მაგალითად, სათაური, ნავიგაცია და ბარათები.</li>
+      </ol>
+    </section>
 
-      <table>
-        <thead>
-          <tr>
-            <th>ხელსაწყო</th>
-            <th>რისთვის გამოიყენება</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>სახატავი ტაბლეტი</td>
-            <td>პერსონაჟებისა და ნახატების შესაქმნელად</td>
-          </tr>
-          <tr>
-            <td>ანიმაციის პროგრამა</td>
-            <td>ნახატების მოძრაობაში მოსაყვანად</td>
-          </tr>
-        </tbody>
-      </table>
-    </article>
+    <!-- მისია 3: კოდის AI-ით განხილვა -->
+    <section id="review" class="card card-yellow" aria-labelledby="review-title">
+      <p class="mission">მისია 3</p>
+      <h2 id="review-title">AI — კოდის მიმოხილვა</h2>
+      <p>ჩასვი შენი HTML და CSS AI ჩატში და სთხოვე შეამოწმოს სემანტიკა, ხელმისაწვდომობა, მობილურზე ადაპტაცია და ფონტები.</p>
+      <blockquote>
+        „გააკეთე ჩემი HTML-ისა და CSS-ის code review. მითხარი, რა არის კარგი,
+        რა პრობლემებია და რატომ; შემომთავაზე კონკრეტული გაუმჯობესებები.
+        კოდი არ გადააკეთო — ჯერ მხოლოდ რეკომენდაციები მომეცი.“
+      </blockquote>
+    </section>
 
-    <aside class="tip">
-      <h2>რჩევა დამწყებს</h2>
-      <p>დაიწყე მარტივი ნახატებით და ყოველდღე ივარჯიშე.</p>
-    </aside>
+    <!-- მისია 4: GitHub Pages-ზე გამოქვეყნება -->
+    <section class="card card-green" aria-labelledby="pages-title">
+      <p class="mission">მისია 4</p>
+      <h2 id="pages-title">GitHub Pages</h2>
+      <ol>
+        <li>ატვირთე ფაილები GitHub-ის რეპოზიტორიაში და შექმენი commit.</li>
+        <li>რეპოზიტორიის Settings → Pages მენიუში ჩართე GitHub Pages.</li>
+        <li>გახსენი გამოქვეყნებული ბმული და დარწმუნდი, რომ გვერდი მუშაობს.</li>
+      </ol>
+    </section>
   </main>
 
-  <footer class="footer">
-    <p>ანიმატორის სამყარო · 2026</p>
+  <!-- გვერდის ქვედა ნაწილი -->
+  <footer class="site-footer">
+    <p>შექმნილია HTML-ითა და CSS-ით · 2026</p>
   </footer>
 </body>
 </html>
